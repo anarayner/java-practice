@@ -1,6 +1,9 @@
 package lambda;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class StudentInfo {
      void printStudentOverGrade(ArrayList<Student> al, double grade){
@@ -40,12 +43,22 @@ class T{
         students.add(st4);
         students.add(st5);
 
-        StudentInfo info = new StudentInfo();
-        info.printStudentOverGrade(students, 8);
-        System.out.println("---------");
-        info.printStudentUnderAge(students, 25);
-        System.out.println("---------");
-        info.printStudentsMixCondition(students, 25, 8);
+//        StudentInfo info = new StudentInfo();
+//        info.printStudentOverGrade(students, 8);
+//        System.out.println("---------");
+//        info.printStudentUnderAge(students, 25);
+//        System.out.println("---------");
+//        info.printStudentsMixCondition(students, 25, 8);
+
+//        Collections.sort(students, new Comparator<Student>() {
+//            @Override
+//            public int compare(Student o1, Student o2) {
+//                return o1.course - o2.course;
+//            }
+//        });
+
+        Collections.sort(students, (stud1, stud2) -> stud1.course - stud2.course);
+        System.out.println(students);
 
     }
 }

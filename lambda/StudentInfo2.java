@@ -1,15 +1,24 @@
 package lambda;
 
 import java.util.ArrayList;
+import java.util.function.Predicate;
 
 public class StudentInfo2 {
-   void testStudent(ArrayList<Student> al, StudentCheck sc){
+//   void testStudent(ArrayList<Student> al, StudentCheck sc){
+//       for(Student s: al){
+//            if(sc.check(s)){
+//                System.out.println(s);
+//            }
+//       }
+//   }
+       void testStudent(ArrayList<Student> al, Predicate<Student> pr){
        for(Student s: al){
-            if(sc.check(s)){
+            if(pr.test(s)){
                 System.out.println(s);
             }
        }
    }
+
 }
 class T2{
     public static void main(String[] args){
@@ -26,15 +35,15 @@ class T2{
         students.add(st4);
         students.add(st5);
 
-        StudentInfo2 info = new StudentInfo2();
-        info.testStudent(students, new checkOverGrade());
-        info.testStudent(students, new StudentCheck() {
-            @Override
-            public boolean check(Student s) {
-                return s.age < 30;
-            }
-        });
-        info.testStudent(students, (Student s) -> { return s.age<30});
+//        StudentInfo2 info = new StudentInfo2();
+//        info.testStudent(students, new checkOverGrade());
+//        info.testStudent(students, new StudentCheck() {
+//            @Override
+//            public boolean check(Student s) {
+//                return s.age < 30;
+//            }
+//        });
+//        info.testStudent(students, (Student s) -> s.age<30);
 //        info.printStudentOverGrade(students, 8);
 //        System.out.println("---------");
 //        info.printStudentUnderAge(students, 25);
