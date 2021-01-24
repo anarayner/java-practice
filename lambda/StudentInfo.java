@@ -33,7 +33,7 @@ class T{
         Student st1 = new Student("Ivan",  'm', 22,3, 8.3);
         Student st2 = new Student("Sam",  'm', 25,1, 7.5);
         Student st3 = new Student("Tom",  'm', 22,3, 6.1);
-        Student st4 = new Student("Victoria",  'f', 28,5, 10.0);
+        Student st4 = new Student("Victoria",  'f', 23,5, 10.0);
         Student st5 = new Student("Dean",  'm', 30,4, 8.9);
 
         ArrayList<Student> students = new ArrayList<>();
@@ -43,12 +43,12 @@ class T{
         students.add(st4);
         students.add(st5);
 
-//        StudentInfo info = new StudentInfo();
-//        info.printStudentOverGrade(students, 8);
-//        System.out.println("---------");
-//        info.printStudentUnderAge(students, 25);
-//        System.out.println("---------");
-//        info.printStudentsMixCondition(students, 25, 8);
+        StudentInfo info = new StudentInfo();
+        info.printStudentOverGrade(students, 8);
+        System.out.println("---------");
+        info.printStudentUnderAge(students, 25);
+        System.out.println("---------");
+        info.printStudentsMixCondition(students, 25, 8);
 
 //        Collections.sort(students, new Comparator<Student>() {
 //            @Override
@@ -57,8 +57,8 @@ class T{
 //            }
 //        });
 
-        Collections.sort(students, (stud1, stud2) -> stud1.course - stud2.course);
-        System.out.println(students);
+//        Collections.sort(students, (stud1, stud2) -> stud1.course - stud2.course);
+//        System.out.println(students);
 
     }
 }
